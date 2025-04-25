@@ -47,7 +47,8 @@ The Jenkinsfile is configured to:
 - Deploy the application using docker-compose
 
 ## Screenshots
-*(Add screenshots here if available)*
+![Screenshot 2025-04-25 193249](https://github.com/user-attachments/assets/2247a25f-a884-4fe1-8e19-db51490e8289)
+
 
 ## Notes
 - All forms are manually handled without using Django forms.
