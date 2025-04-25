@@ -47,7 +47,10 @@ The Jenkinsfile is configured to:
 - Deploy the application using docker-compose
 
 ## Screenshots
-![Screenshot 2025-04-25 193249](https://github.com/user-attachments/assets/2247a25f-a884-4fe1-8e19-db51490e8289)
+![Screenshot 2025-04-25 193056](https://github.com/user-attachments/assets/4177a185-277c-4744-a216-27cd83d31422)
+![Screenshot 2025-04-25 193155](https://github.com/user-attachments/assets/f2664435-c5cf-4fae-960d-16c8669c6088)
+![Screenshot 2025-04-25 193223](https://github.com/user-attachments/assets/10693b37-7dd4-4a78-a9cd-c508f9cd64e7)
+![Screenshot 2025-04-25 193249](https://github.com/user-attachments/assets/115b2179-778e-4a78-9904-14466be73e7e)
 
 
 ## Notes
