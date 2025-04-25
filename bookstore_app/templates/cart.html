@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .total-row td {
+            font-weight: bold;
+            font-size: 1.1em;
+            border-top: 2px solid #007BFF;
+        }
+        a.button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a.button:hover {
+            background-color: #0056b3;
+        }
+        .empty-cart {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    {% if cart_items %}
+    <table>
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Price per Unit</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td><a href="{% url 'bookstore_app:book_detail' item.book.pk %}">{{ item.book.title }}</a></td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.book.price }}</td>
+                <td>${{ item.subtotal }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td colspan="3">Total</td>
+                <td>${{ total }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'bookstore_app:book_list' %}" class="button">Continue Shopping</a>
+    {% else %}
+    <p class="empty-cart">Your cart is empty.</p>
+    <a href="{% url 'bookstore_app:book_list' %}" class="button">Browse Books</a>
+    {% endif %}
+</body>
+</html>
